@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
     })
 
 // timer
-    const deadline = '2021-10-13'
+    const deadline = '2022-10-13'
 
     function getTimeRemaining(endtime) {
         const t = Date.parse(endtime) - Date.parse(new Date()),
@@ -90,5 +90,38 @@ window.addEventListener('DOMContentLoaded', ()=>{
     }
 
     setClock('.timer', deadline)
+
+
+
+ // modal
+
+    const modalTrigger = document.querySelectorAll('[data-modal]'),
+        modalCloseBtn = document.querySelector('[data-close]'),
+        modal = document.querySelector('.modal');
+
+    modalTrigger.forEach(item =>{
+        item.addEventListener('click', (e)=>{
+            modal.classList.toggle('show');
+            document.body.style.overflow = 'hidden';
+        })
+    });
+
+    function closeModal(){
+        modal.classList.toggle('show');
+        document.body.style.overflow = ''
+    }
+
+    modalCloseBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e)=>{
+        if(e.target === modal){
+            closeModal()
+        }
+    });
+
+    document.addEventListener('keydown', e =>{
+        if(e.code === 'Escape' && modal.classList.contains('show')){
+            closeModal()
+        }
+    });
 
 });
