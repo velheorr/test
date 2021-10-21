@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
         wrapper: '.offer__slider-wrapper',
         field: '.offer__slider-inner'
     });
-    timer('.timer', '2020-12-31');
+    timer('.timer', '2021-12-31');
 
 
 });
