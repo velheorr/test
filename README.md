@@ -1,1 +1,1 @@
-Пройденный курс с Udemi по React, Redux, JS
+Пройденный курс с Udemi по JS
